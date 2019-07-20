@@ -3,7 +3,7 @@ import React from 'react';
 import Recipes from './Recipes';
 
 const RecipeList = props => {
-    // const results = this.props.recipes;
+    // const results = props.recipes;
     // let recipes = results.map(recipe =>
     //     <Recipes />
     // );
