@@ -15,7 +15,7 @@ import Chinese from './Chinese';
 import Mexican from './Mexican';
 import Desert from './Desert';
 import RecipeList from './RecipeList';
-import Form from './Form'
+import SearchForm from './SearchForm'
 
 
 
@@ -31,13 +31,16 @@ class App extends Component {
       }
 
      componentDidMount() {
-         
+         this.performSearch();
+     }
+
+     performSearch = (query) => {
           // Make a request for a user with a given ID
-          axios.get(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=shredded%20chicken&count=10`)
+          axios.get(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${query}&count=10`)
           .then(response => {
-                    this.setState({ 
-                    recipes: response.data.recipes 
-                    });
+               this.setState({ 
+               recipes: response.data.recipes 
+               });
           })
           .catch(error => {
                // handle error
@@ -62,8 +65,13 @@ class App extends Component {
                               </div>
                               
                               <div className="col-lg-4">
-                                   <Form getMenuList={this.getMenuList} />
-                                   <RecipeList data={this.state.recipes} />
+                                   <div className="search-form">
+                                        <SearchForm onSearch={this.performSearch} />
+                                   </div>
+                                   <div className="recipeList">
+                                        <RecipeList recipes={this.state.recipes} />
+                                   </div>
+                                  
                               </div>
 
                          </div>

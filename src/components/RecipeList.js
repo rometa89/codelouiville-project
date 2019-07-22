@@ -3,10 +3,10 @@ import React from 'react';
 import Recipes from './Recipes';
 
 const RecipeList = props => {
-    // const results = props.recipes;
-    // let recipes = results.map(recipe =>
-    //     <Recipes />
-    // );
+    const results = props.recipes;
+    let recipes = results.map(recipe =>
+        <Recipes />
+    );
 
     return(
         <ul className="recipe-List">

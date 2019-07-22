@@ -469,34 +469,12 @@ input[type=number]::-webkit-outer-spin-button {
 	
 }
 /******************************
-******** Checkout css ********/
-
-#ki-checkout table{
-	margin-bottom: 0;
+******** Search Form css ********/
+label.is-hidden{
+	display: none;
 }
 
-#ki-checkout table thead{
-	background-color: #f40219;
-	color: #fff;
-	text-align: center;
-}
 
-#ki-checkout table thead th{
-	text-align: center;
-}
-#ki-checkout table tbody td{
-	padding: 14px 8px;
-	text-align: center;
-}
-
-#ki-checkout .modal-body{
-	padding: 0;
-}
-
-#ki-checkout .close{
-	background-color: #e8e5e5;
-	color: #f40219;
-}
 
 /******************************
 ******** Media-Queries ********/
