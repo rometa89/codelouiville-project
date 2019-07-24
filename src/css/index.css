@@ -151,7 +151,7 @@ button.btn:focus{
 
 .menu-item img{
 	max-width: 100%;
-    max-height: 345px;
+    height: 345px;
     width: 100%;
 }
 
@@ -304,75 +304,6 @@ input[type=number]::-webkit-outer-spin-button {
 	float: right;
 }
 
-/***************************
-******** Modal-css ********/
-.modal-dialog .modal-content{
-	border-radius: 0;
-}
-
-.modal-header{
-	border-bottom: none;
-	padding: 0;
-}
-
-.modal-footer{
-	border-top: none;
-}
-
-.modal-content .close{
-    background: #f40219;
-    height: 30px;
-    width: 30px;
-    opacity: 1;
-    text-shadow: none;
-    font-size: 20px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    color: #fff;
-    line-height: 27px;
-    position: absolute;
-    right: -10px;
-    top: -10px;
-}
-
-.modal-content .close span{
-	font-size: 30px;
-}
-
-.feature-product,
-#ki-checkout table tbody{
-	background-color: #eee;
-}
-
-.feature-product .pro-image{
-	float: left;
-}
-
-.feature-product .pro-desc {
-    overflow: hidden;
-    padding-left: 30px;
-}
-
-.feature-product .pro-desc h2{
-	font-weight: 700;
-	margin: 10px 0 15px 0;
-}
-
-.feature-product .add-opt{
-	padding: 15px 0;
-}
-
-.pro-desc h2 span{
-	font-size: 14px;
-	font-weight: normal;
-}
-
-.feature-product .pro-quantity{
-	float: left;
-	margin-right: 30px;
-}
-
 .add-btn {
 	background-color: #038c23;
 	border-color: #038c23;
@@ -474,7 +405,77 @@ label.is-hidden{
 	display: none;
 }
 
+.search-form input{
+	background-color: #f8f8f8;
+	border: 1px #ddd solid;
+    border-bottom: 2px solid #f40219;
+	width: calc(100% - 65px);
+	padding: 7px 6px;
+}
 
+
+/******************************
+******** RecipeList Css ********/
+.recipeList{
+	margin-top: 30px;
+	text-align: center;
+}
+.recipe-container{
+	margin-bottom: 20px;
+}
+
+.recipe-container .image_wrap{
+	margin-bottom: 15px;
+}
+
+.recipe-container .image_wrap img{
+	height: 315px;
+	width: 100%;
+}
+
+.recipe-container .publisher{
+	color: #f40219;
+}
+
+.userList{
+	display: inline-block;
+}
+
+.user-name h2{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.userList{
+	margin-right: 10px;
+}
+
+.userList:last-child{
+	margin-right: 0;
+}
+
+.userList p{
+	font-size: 13px;
+	margin-bottom: 0;
+}
+
+.userList .user-email{
+	color: #0064CC;
+}
+
+.userList .user-img img{
+	width: 100%;
+	min-height: 182px;
+	max-height: 182px;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.userList .user-loc{
+	font-style: italic;
+	/* font-weight: bold; */
+	margin: 10px 0;
+}
 
 /******************************
 ******** Media-Queries ********/
