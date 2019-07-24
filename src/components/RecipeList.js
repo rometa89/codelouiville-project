@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Recipes from './Recipes';
-import NoRecipes from './NoRecipes';
+// import NoRecipes from './NoRecipes';
 
 const RecipeList = props => {
     const results = props.recipes;

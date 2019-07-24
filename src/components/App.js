@@ -17,35 +17,48 @@ import Desert from './Desert';
 import RecipeList from './RecipeList';
 import SearchForm from './SearchForm';
 import People from './Persons/People';
+import Titles from './Weather/Titles';
+import WeatherForm from './Weather/WeatherForm';
+import Weather from './Weather/Weather';
+
 
 
 
 const API_KEY = "093bdf9999e73c83bd9ac1b94e63b4db";
+const WEA_API_KEY = "8eba6662008583705a4216334df1aae0";
 
 class App extends Component {
 
      constructor() {
           super();
           this.state = {
+          //state for food api //
               recipes: [],
-              people: []
+
+          //state for randomuser api //
+              people: [],
+
+          //state for weather api //
+
+          //     temperature: undefined,
+          //     city: undefined,
+          //     country: undefined,
+          //     humidity: undefined,
+          //     description: undefined,
+          //     error: undefined
+          //     }
           }
       }
 
      async componentDidMount() {
          this.performSearch('chicken');
-
-         const url = "https://api.randomuser.me/?results=6";
-          const response = await fetch(url);
-          const data = await response.json();
-          console.log('Random person data:');
-          console.log(data.results);
-          this.setState({people: data.results})
+          this.userInfo();
+          this.getWeather();
      }
 
      performSearch = (query = 'pizza') => {
           // Make a request for a user with a given ID
-          axios.get(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${query}&count=4`)
+          axios.get(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${query}&count=3`)
           .then(response => {
                if(response.data.error === undefined) {
                     this.setState({ 
@@ -61,10 +74,27 @@ class App extends Component {
                console.log('Error fetching and parsing data', error);
           });
      }
+   userInfo = async () => {
+          const url = "https://api.randomuser.me/?results=6";
+          const response = await fetch(url);
+          const data = await response.json();
+          console.log('Random person data:');
+          console.log(data.results);
+          this.setState({people: data.results})
+   }
+     
+     getWeather = async (e) => {
+          // const city = e.target.elements.city.value;
+          // const country = e.target.elements.country.value;
+          const wea_api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Manchester,uk&appid=${WEA_API_KEY}&units=metric`);
+          const data = await wea_api_call.json();
+          console.log(data);
+     }
 
      render() {
-          console.log(this.state.recipes);
-          console.log(this.state.people);
+          // console.log(this.state.recipes);
+          // console.log(this.state.people);
+          
           
           return (
                <BrowserRouter>
@@ -78,6 +108,9 @@ class App extends Component {
                                    <Route path="/mexican" component={Mexican} />
                                    <Route path="/desert" component={Desert} />
 
+                                   <div className="testimonials">
+                                        <People people={this.state.people} />
+                                   </div>
                                    
                               </div>
                               
@@ -87,27 +120,16 @@ class App extends Component {
                                    </div>
                                    
                                         <RecipeList recipes={this.state.recipes} />
-                                   
-                                   {/* <div>
-                                        <div>
-                                             {this.state.person.name.title}
+
+                                        <div className="weather-content">
+                                             <Titles />
+                                             <WeatherForm getWeather={this.getWeather} />
+                                             <Weather />
                                         </div>
-                                        <div>
-                                             {this.state.person.name.first}
-                                        </div>
-                                   </div> */}
-                                  
-                                  
                               </div>
 
                          </div>
 
-                    </div>
-
-                    <div className="col-md-12">
-                         <div className="testimonials">
-                              <People people={this.state.people} />
-                         </div>
                     </div>
 
                </BrowserRouter>
