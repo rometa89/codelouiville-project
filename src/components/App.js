@@ -23,8 +23,10 @@ import Weather from './Weather/Weather';
 
 
 
-
+// Food api key //
 const API_KEY = "093bdf9999e73c83bd9ac1b94e63b4db";
+
+// Weather api-key //
 const WEA_API_KEY = "8eba6662008583705a4216334df1aae0";
 
 class App extends Component {
@@ -91,11 +93,7 @@ class App extends Component {
           console.log(data);
      }
 
-     render() {
-          // console.log(this.state.recipes);
-          // console.log(this.state.people);
-          
-          
+     render() {  
           return (
                <BrowserRouter>
                     <div className="container-fluid">
