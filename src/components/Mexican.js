@@ -7,7 +7,7 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('./images/tacoBeefFood.jpg')} alt="A food" />
+                            <img src={require('../images/tacoBeefFood.jpg')} alt="A food" />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
@@ -22,7 +22,7 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('./images/enchilada.jpg')}  alt='' />
+                            <img src={require('../images/enchilada.jpg')}  alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
@@ -37,7 +37,7 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('./images/mexicanBurrito.jpg')} alt='' />
+                            <img src={require('../images/mexicanBurrito.jpg')} alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
@@ -52,7 +52,7 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('./images/nachosChips.jpg')} alt='' />
+                            <img src={require('../images/nachosChips.jpg')} alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">

@@ -9,7 +9,7 @@ class Pizza extends React.Component {
                     <div className="col-sm-6">
                         <div className="menu-item">
                             <div className="menu-image">
-                                <img src={require('./images/cheesePizza.jpg')} alt="A Pizza" />
+                                <img src={require('../images/cheesePizza.jpg')} alt="A Pizza" />
                             </div>
                             <div className="image-caption">
                                 <div className="caption-left-info">
@@ -24,7 +24,7 @@ class Pizza extends React.Component {
                     <div className="col-sm-6">
                         <div className="menu-item">
                             <div className="menu-image">
-                                <img src={require('./images/miniPizza.jpg')}  alt='' />
+                                <img src={require('../images/miniPizza.jpg')}  alt='' />
                             </div>
                             <div className="image-caption">
                                 <div className="caption-left-info">
@@ -39,7 +39,7 @@ class Pizza extends React.Component {
                     <div className="col-sm-6">
                         <div className="menu-item">
                             <div className="menu-image">
-                                <img src={require('./images/woodFried.jpg')} alt='' />
+                                <img src={require('../images/woodFried.jpg')} alt='' />
                             </div>
                             <div className="image-caption">
                                 <div className="caption-left-info">
@@ -54,7 +54,7 @@ class Pizza extends React.Component {
                     <div className="col-sm-6">
                         <div className="menu-item">
                             <div className="menu-image">
-                                <img src={require('./images/italianCheesePizza.jpg')} alt='' />
+                                <img src={require('../images/italianCheesePizza.jpg')} alt='' />
                             </div>
                             <div className="image-caption">
                                 <div className="caption-left-info">

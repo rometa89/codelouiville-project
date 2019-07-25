@@ -3,8 +3,8 @@ import React from 'react';
 
 const Titles = () => (
     <div className="Weather-title">
-        <h3>Todays Weather</h3>
-        <p>Temperature</p>
+        <h3>Weather Forecast</h3>
+        {/* <p>Todays Weather Forecast</p> */}
     </div>
 );
 

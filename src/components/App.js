@@ -17,6 +17,7 @@ import Desert from './Desert';
 import RecipeList from './RecipeList';
 import SearchForm from './SearchForm';
 import People from './Persons/People';
+import PersonTitle from './Persons/PersonTitle';
 import Titles from './Weather/Titles';
 import WeatherForm from './Weather/WeatherForm';
 import Weather from './Weather/Weather';
@@ -42,20 +43,20 @@ class App extends Component {
 
           //state for weather api //
 
-          //     temperature: undefined,
-          //     city: undefined,
-          //     country: undefined,
-          //     humidity: undefined,
-          //     description: undefined,
-          //     error: undefined
-          //     }
+              temperature: undefined,
+              city: undefined,
+              country: undefined,
+              humidity: undefined,
+              description: undefined,
+              error: undefined
+              
           }
       }
 
      async componentDidMount() {
          this.performSearch('chicken');
           this.userInfo();
-          this.getWeather();
+          // this.getWeather();
      }
 
      performSearch = (query = 'pizza') => {
@@ -77,7 +78,7 @@ class App extends Component {
           });
      }
    userInfo = async () => {
-          const url = "https://api.randomuser.me/?results=6";
+          const url = "https://api.randomuser.me/?results=5";
           const response = await fetch(url);
           const data = await response.json();
           console.log('Random person data:');
@@ -86,11 +87,25 @@ class App extends Component {
    }
      
      getWeather = async (e) => {
-          // const city = e.target.elements.city.value;
-          // const country = e.target.elements.country.value;
-          const wea_api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Manchester,uk&appid=${WEA_API_KEY}&units=metric`);
+          e.preventDefault();
+          const city = e.target.elements.city.value;
+          const country = e.target.elements.country.value;
+          const wea_api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${WEA_API_KEY}&units=metric`);
           const data = await wea_api_call.json();
-          console.log(data);
+
+          if(city && country) {
+               this.setState({
+                    temperature: data.main.temp,
+                    city: data.name,
+                    country: data.sys.country,
+                    humidity: data.main.humidity,
+                    description: data.weather[0].description,
+                    error: ""
+               });
+               
+          } else{
+               this.setState({ error: "Please enter the values" });
+          }
      }
 
      render() {  
@@ -107,23 +122,31 @@ class App extends Component {
                                    <Route path="/desert" component={Desert} />
 
                                    <div className="testimonials">
+                                        <PersonTitle />
                                         <People people={this.state.people} />
                                    </div>
                                    
                               </div>
                               
                               <div className="col-lg-4">
-                                   <div className="search-form">
+                                   <div className="recipe-content">
                                         <SearchForm onSearch={this.performSearch} />
-                                   </div>
                                    
                                         <RecipeList recipes={this.state.recipes} />
+                                   </div>
+                                   
 
-                                        <div className="weather-content">
-                                             <Titles />
-                                             <WeatherForm getWeather={this.getWeather} />
-                                             <Weather />
-                                        </div>
+                                   <div className="weather-content">
+                                        <Titles />
+                                        <WeatherForm loadWeather={this.getWeather} />
+                                        <Weather temperature={this.state.temperature}
+                                                  city={this.state.city}
+                                                  country={this.state.country}
+                                                  humidity={this.state.humidity}
+                                                  description={this.state.description}
+                                                  error={this.state.error} 
+                                        />                                                      
+                                   </div>
                               </div>
 
                          </div>
