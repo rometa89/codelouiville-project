@@ -140,7 +140,7 @@ button.btn:focus{
 }
 
 .menu-item:last-child{
-	margin-bottom: 0;
+	/* margin-bottom: 0; */
 }
 
 .menu-item img{
