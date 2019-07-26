@@ -4,8 +4,8 @@ import React from 'react';
 const People = props => {
     return props.people.map((person) => {
         return(
-            <div className="col-md-3">
-                <div key={person.login.uuid} className="userList">
+            <div key={person.login.uuid} className="col-md-3">
+                <div className="userList">
                 
                     <div className="user-img">
                         <img src={person.picture.large} alt="" />
