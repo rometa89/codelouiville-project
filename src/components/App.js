@@ -133,6 +133,7 @@ class App extends Component {
 
                                    <div className="testimonials">
                                         <PersonTitle />
+                                        
                                         <div className="row">
                                              <People people={this.state.people} />
                                         </div>

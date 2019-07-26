@@ -4,8 +4,7 @@ const Chinese = () => {
     return (
         <div className="tab-pane">
             <div className="row">
-                <div className="col-sm-6">
-                    <div className="menu-item">
+                    <div className="col-sm-6 menu-item">
                         <div className="menu-image">
                             <img src={require('../../images/dimsum.jpg')} alt="A food" />
                         </div>
@@ -17,10 +16,8 @@ const Chinese = () => {
                             <span className="add-btn">Add</span>
                         </div>
                     </div>
-                </div>
 
-                <div className="col-sm-6">
-                    <div className="menu-item">
+                    <div className="col-sm-6 menu-item">
                         <div className="menu-image">
                             <img src={require('../../images/noodles.jpg')}  alt='' />
                         </div>
@@ -32,10 +29,9 @@ const Chinese = () => {
                             <span className="add-btn">Add</span>
                         </div>
                     </div>
-                </div>
+                
 
-                <div className="col-sm-6">
-                    <div className="menu-item">
+                    <div className="col-sm-6 menu-item">
                         <div className="menu-image">
                             <img src={require('../../images/springRoll.jpg')} alt='' />
                         </div>
@@ -47,10 +43,8 @@ const Chinese = () => {
                             <span className="add-btn">Add</span>
                         </div>
                     </div>
-                </div>
 
-                <div className="col-sm-6">
-                    <div className="menu-item">
+                    <div className="col-sm-6 menu-item">
                         <div className="menu-image">
                             <img src={require('../../images/sushi.jpg')} alt='' />
                         </div>
@@ -62,7 +56,6 @@ const Chinese = () => {
                             <span className="add-btn">Add</span>
                         </div>
                     </div>
-                </div>
             </div>
             
         </div>

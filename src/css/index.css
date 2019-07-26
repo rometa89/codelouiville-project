@@ -7,10 +7,6 @@ a:hover, a:focus{
 	text-decoration: none ;
 	color: initial;
 }
-.c-text{
-	font-family: 'Bungee', cursive;
-	font-size: 30px;
-}
 
 body{
 	font-family: 'Raleway', sans-serif;
@@ -56,18 +52,6 @@ button.btn:focus{
 	text-align: center;
 }
 
-.app-slides{
-	height: 75vh; 
-}
-
-.ki-slides img{
-	height: 550px !important;
-    width: 100%;
-}
-
-
-
-
 /************************************
 ********** Menu-page-css ***********/
 
@@ -80,18 +64,13 @@ button.btn:focus{
 	height: 50px;
 }
 
-.nav-tabs{
-	float: left;
-    
-}
-
 .nav-tabs::-webkit-scrollbar {
 	display: none !important;
   	height: 0;
 }
 
-::-webkit-scrollbar-thumb{
-	background: red;
+.nav-tabs{
+	border-bottom: none;
 }
 
 .nav-tabs > li{
@@ -133,14 +112,14 @@ button.btn:focus{
 /***********************************
 ********** Menu-items *********/
 
-
 .menu-item{
 	position: relative;
 	margin-bottom: 30px;
 }
 
 .menu-item:last-child{
-	/* margin-bottom: 0; */
+	margin-bottom: 0;
+	height: 100%;
 }
 
 .menu-item img{
@@ -153,67 +132,14 @@ button.btn:focus{
 	background-color: #f0f0f0;
 }
 
-.menu-item .image-caption .item-name,
-.menu-item .image-caption .item-price{
-	position: absolute;
-	color: #fff;
-	font-weight: 600;
-	
-}
-
-.item-price{
-	background-color:  #f40219;
-	color: #fff;
-	display: inline-block;
-	font-size: 25px;
-	height: 40px;
-	width: 50px;
-	line-height: 40px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	text-align: center;
-}
-
-.menu-item .image-caption .item-price{
-	right: 10px;
-	top: 10px;
-}
-
-.menu-item .image-caption .item-name{
-	display: block;
-	font-size: 18px;
-}
-
-.add-btn {
-	background-color: #038c23;
-	border-color: #038c23;
-	color: #fff;
-	padding: 8px 15px;
-	font-size: 12px;
-	font-weight: 500;
-	text-transform: uppercase;
-	z-index: 1;
-	position: relative;
-	float: right;
-    margin-top: 5px;
-}
-
-.add-btn:hover{
-	color: #fff;
-}
-
-.menu-item{
-	margin-bottom: 30px;
-}
 
 .image-caption{
 	bottom: 0;
 	height: auto;
 	padding: 10px;
-	top: initial;
+	bottom: 0;
 	position: absolute;
-	width: 100%;
+	width: calc(100% - 30px);
 }
 
 .image-caption span{
@@ -246,6 +172,24 @@ button.btn:focus{
 	float: left;
 	overflow: hidden;
 	padding-right: 15px;
+}
+
+.add-btn {
+	background-color: #038c23;
+	border-color: #038c23;
+	color: #fff;
+	padding: 8px 15px;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	z-index: 1;
+	position: relative;
+	float: right;
+    margin-top: 5px;
+}
+
+.add-btn:hover{
+	color: #fff;
 }
 
 .tab-pane{
