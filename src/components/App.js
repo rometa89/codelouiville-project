@@ -125,7 +125,7 @@ class App extends Component {
                                    <Nav />
 
                                    {/* Navigable Routes */}
-                                   
+
                                    <Route exact path="/" component={Pizza} />
                                    <Route path="/chinese" component={Chinese} />
                                    <Route path="/mexican" component={Mexican} />
@@ -133,7 +133,9 @@ class App extends Component {
 
                                    <div className="testimonials">
                                         <PersonTitle />
-                                        <People people={this.state.people} />
+                                        <div className="row">
+                                             <People people={this.state.people} />
+                                        </div>
                                    </div>
                                    
                               </div>

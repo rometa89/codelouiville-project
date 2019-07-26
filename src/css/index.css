@@ -116,7 +116,7 @@ button.btn:focus{
 .nav-tabs > li > a{
 	border: none;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.2em;
 	display: inline-block;
 	padding: 10px 15px;
 } 
@@ -130,7 +130,6 @@ button.btn:focus{
 	border: none;
 }  
 
-
 /***********************************
 ********** Menu-items *********/
 
@@ -138,6 +137,10 @@ button.btn:focus{
 .menu-item{
 	position: relative;
 	margin-bottom: 30px;
+}
+
+.menu-item:last-child{
+	margin-bottom: 0;
 }
 
 .menu-item img{
@@ -239,32 +242,14 @@ button.btn:focus{
 	right: 0;
 }
 
-.image-caption .item-price{
-	background-color: transparent;
-}
-
 .caption-left-info{
 	float: left;
 	overflow: hidden;
 	padding-right: 15px;
 }
 
-.image-caption .ki-cart-icon{
-	display: inline-block;
-    margin-top: 10px;
-    background: white;
-    height: 30px;
-    width: 30px;
-    line-height: 36px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.image-caption .ki-cart-icon i{
-	color: #f40219;
-    position: relative;
-    font-size: 20px;
-    z-index: 1;
+.tab-pane{
+	margin-bottom: 30px;
 }
 
 .tab-pane p{
@@ -281,7 +266,7 @@ button.btn:focus{
 .testimonials{
 	background-color: #f7f7f7;
 	padding: 15px;
-	margin-top: 20px;
+	margin: 0 0 30px;
 }
 
 .testimonials .testimonial-title{
@@ -293,9 +278,7 @@ button.btn:focus{
 	-webkit-box-shadow: 1px 1px 4px 0px rgba(200, 189, 189, 0.75);
 	-ms-box-shadow: 1px 1px 4px 0px rgba(200, 189, 189, 0.75);
 	box-shadow: 1px 1px 4px 0px rgba(200, 189, 189, 0.75);
-	display: inline-block;
-	width: 18.5%;
-	margin-right: 15px;
+	margin-bottom: 20px;
 }
 
 .user-name h2{
@@ -393,6 +376,7 @@ button.btn:focus{
 	background-image: linear-gradient(150deg, #413e6f, #0db3df);
 	background-color: #f7f7f7;
 	padding: 15px;
+	margin-bottom: 40px;
 }
 
 .Weather-title{
@@ -476,7 +460,8 @@ button.btn:focus{
 /******************************
 ******** Media-Queries ********/
 @media (max-width: 575px) { 
-	.nav-wrap{
+	.nav-wrap ul{
+		display: inherit;
 		white-space: nowrap;
 		width: 100% !important;
 		overflow-x: auto !important;
@@ -486,6 +471,10 @@ button.btn:focus{
 		overflow-scrolling: touch;
 		-webkit-overflow-style: none;
 		overflow-style: none;
+	}
+
+	.menu-item img{
+		height: 250px;
 	}
  } 
 
