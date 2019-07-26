@@ -7,7 +7,7 @@ const Desert = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/sundae.jpg')} alt="A food" />
+                            <img src={require('../../images/sundae.jpg')} alt="A food" />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
@@ -22,7 +22,7 @@ const Desert = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/bananasStraberry.jpg')}  alt='' />
+                            <img src={require('../../images/bananasStraberry.jpg')}  alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
@@ -37,7 +37,7 @@ const Desert = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/iceCreamFruits.jpg')} alt='' />
+                            <img src={require('../../images/iceCreamFruits.jpg')} alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
@@ -52,7 +52,7 @@ const Desert = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/applePie.jpg')} alt='' />
+                            <img src={require('../../images/applePie.jpg')} alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">

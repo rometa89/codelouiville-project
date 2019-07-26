@@ -1,17 +1,17 @@
 import React from 'react'
 
-const Mexican = () => {
+const Chinese = () => {
     return (
         <div className="tab-pane">
             <div className="row">
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/tacoBeefFood.jpg')} alt="A food" />
+                            <img src={require('../../images/dimsum.jpg')} alt="A food" />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
-                                <span className="item-name">Taco Beef Food</span>
+                                <span className="item-name">Dimsum</span>
                                 <span className="item-amt">$10</span>
                             </div>
                             <span className="add-btn">Add</span>
@@ -22,11 +22,11 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/enchilada.jpg')}  alt='' />
+                            <img src={require('../../images/noodles.jpg')}  alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
-                                <span className="item-name">Enchilada</span>
+                                <span className="item-name">Noodles</span>
                                 <span className="item-amt">$8</span>
                             </div>
                             <span className="add-btn">Add</span>
@@ -37,11 +37,11 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/mexicanBurrito.jpg')} alt='' />
+                            <img src={require('../../images/springRoll.jpg')} alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
-                                <span className="item-name">Mexican Burrito</span>
+                                <span className="item-name">Spring Rolls</span>
                                 <span className="item-amt">$12</span>
                             </div>
                             <span className="add-btn">Add</span>
@@ -52,11 +52,11 @@ const Mexican = () => {
                 <div className="col-sm-6">
                     <div className="menu-item">
                         <div className="menu-image">
-                            <img src={require('../images/nachosChips.jpg')} alt='' />
+                            <img src={require('../../images/sushi.jpg')} alt='' />
                         </div>
                         <div className="image-caption">
                             <div className="caption-left-info">
-                                <span className="item-name">Nachos Chips</span>
+                                <span className="item-name">Sushi</span>
                                 <span className="item-amt">$15</span>
                             </div>
                             <span className="add-btn">Add</span>
@@ -70,4 +70,4 @@ const Mexican = () => {
 }
 
 
-export default Mexican
+export default Chinese

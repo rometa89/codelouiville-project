@@ -2,10 +2,6 @@ import React from 'react';
 
 
 const People = props => {
-    console.log('Rendering People')
-
-    console.log(props);
-
     return props.people.map((person) => {
         return(
             <div key={person.login.uuid} className="userList">
@@ -13,7 +9,7 @@ const People = props => {
                 <div className="user-img">
                      <img src={person.picture.large} alt="" />
                 </div>
-                <div class="user-desc">
+                <div className="user-desc">
                     <div className="user-name">
                         <h2> {person.name.first} {person.name.last}</h2>
                     </div>

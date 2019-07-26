@@ -10,12 +10,12 @@ import axios from 'axios';
 // App components
 import Header from './Header';
 import Nav from './Nav';
-import Pizza from './Pizza';
-import Chinese from './Chinese';
-import Mexican from './Mexican';
-import Desert from './Desert';
-import RecipeList from './RecipeList';
-import SearchForm from './SearchForm';
+import Pizza from './MenuList/Pizza';
+import Chinese from './MenuList/Chinese';
+import Mexican from './MenuList/Mexican';
+import Desert from './MenuList/Desert';
+import RecipeList from './Recipes/RecipeList';
+import SearchForm from './Recipes/SearchForm';
 import People from './Persons/People';
 import PersonTitle from './Persons/PersonTitle';
 import Titles from './Weather/Titles';
@@ -24,7 +24,7 @@ import Weather from './Weather/Weather';
 
 
 
-// Food api key //
+// Recipe api key //
 const API_KEY = "093bdf9999e73c83bd9ac1b94e63b4db";
 
 // Weather api-key //
@@ -35,6 +35,7 @@ class App extends Component {
      constructor() {
           super();
           this.state = {
+
           //state for food api //
               recipes: [],
 
@@ -59,33 +60,39 @@ class App extends Component {
           // this.getWeather();
      }
 
+     // Function to display recipes list
      performSearch = (query = 'pizza') => {
+
           // Make a request for a user with a given ID
           axios.get(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${query}&count=3`)
-          .then(response => {
-               if(response.data.error === undefined) {
-                    this.setState({ 
-                    recipes: response.data.recipes 
-                    });
-               }
-               else {
-                    console.log('Error fetching recipe data: ' + response.data.error)
-               }
-          })
-          .catch(error => {
+               .then(response => {
+                    if(response.data.error === undefined) {
+                         this.setState({ 
+                         recipes: response.data.recipes 
+                         });
+                    }
+                    else {
+                         console.log('Error fetching recipe data: ' + response.data.error)
+                    }
+               })
+
+               .catch(error => {
                // handle error
                console.log('Error fetching and parsing data', error);
           });
      }
-   userInfo = async () => {
-          const url = "https://api.randomuser.me/?results=5";
-          const response = await fetch(url);
-          const data = await response.json();
-          console.log('Random person data:');
-          console.log(data.results);
-          this.setState({people: data.results})
-   }
-     
+
+     // Functions for the user data
+
+     userInfo = async () => {
+               const url = "https://api.randomuser.me/?results=5";
+               const response = await fetch(url);
+               const data = await response.json();
+               this.setState({people: data.results})
+     }
+
+     // Function used to display weather conditions
+
      getWeather = async (e) => {
           e.preventDefault();
           const city = e.target.elements.city.value;
@@ -116,6 +123,9 @@ class App extends Component {
                          <div className="row main-content">
                               <div className="col-lg-8">
                                    <Nav />
+
+                                   {/* Navigable Routes */}
+                                   
                                    <Route exact path="/" component={Pizza} />
                                    <Route path="/chinese" component={Chinese} />
                                    <Route path="/mexican" component={Mexican} />
